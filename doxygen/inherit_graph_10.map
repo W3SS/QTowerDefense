@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$class_projectile.html" title="Représente un projectile générique." alt="" coords="6,81,82,108"/>
+<area shape="rect" id="node3" href="$class_bowl.html" title="Représente une boule de pétanque." alt="" coords="135,5,185,32"/>
+<area shape="rect" id="node5" href="$class_paint.html" title="Représente une bille de peinture." alt="" coords="134,56,186,83"/>
+<area shape="rect" id="node7" href="$class_stone.html" title="Représente une pierre." alt="" coords="132,107,188,133"/>
+<area shape="rect" id="node9" href="$class_water.html" title="Représente une giclée d&#39;eau." alt="" coords="131,157,189,184"/>
+</map>

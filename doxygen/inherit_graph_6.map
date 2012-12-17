@@ -1,0 +1,3 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$class_map.html" title="Représente la carte (plateau/niveau) de jeu. La carte est divisée en 16*16 divisions." alt="" coords="6,5,53,32"/>
+</map>

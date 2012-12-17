@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_enemy.html" title="Représente un ennemi (insecte)." alt="" coords="135,80,197,107"/>
+<area shape="rect" id="node5" href="$class_ant.html" title="Représente une fourmi." alt="" coords="5,155,48,181"/>
+<area shape="rect" id="node7" href="$class_cockroach.html" title="Représente un cafard." alt="" coords="73,155,156,181"/>
+<area shape="rect" id="node9" href="$class_mosquito.html" title="Représente un moustique." alt="" coords="181,155,256,181"/>
+<area shape="rect" id="node11" href="$class_wasp.html" title="Représente une guêpe." alt="" coords="280,155,336,181"/>
+</map>

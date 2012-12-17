@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$_water_gun_8h.html" title="WaterGun.h" alt="" coords="346,80,437,107"/>
+<area shape="rect" id="node8" href="$_hostile_defence_8h.html" title="HostileDefence.h" alt="" coords="225,155,345,181"/>
+<area shape="rect" id="node49" href="$_water_8h.html" title="Water.h" alt="" coords="465,155,532,181"/>
+<area shape="rect" id="node11" href="$_markable_8h.html" title="Markable.h" alt="" coords="195,453,281,480"/>
+<area shape="rect" id="node18" href="$_defence_8h.html" title="Defence.h" alt="" coords="328,379,408,405"/>
+<area shape="rect" id="node24" href="$_power_buff_8h.html" title="PowerBuff.h" alt="" coords="112,379,203,405"/>
+<area shape="rect" id="node29" href="$_projectile_8h.html" title="Projectile.h" alt="" coords="455,229,541,256"/>
+<area shape="rect" id="node14" href="$_mark_8h.html" title="Mark.h" alt="" coords="219,528,281,555"/>
+<area shape="rect" id="node32" href="$_enemy_8h.html" title="Enemy.h" alt="" coords="461,304,536,331"/>
+<area shape="rect" id="node36" href="$_speed_debuff_8h.html" title="SpeedDebuff.h" alt="" coords="491,379,597,405"/>
+<area shape="rect" id="node46" href="$_map_8h.html" title="Map.h" alt="" coords="375,528,433,555"/>
+<area shape="rect" id="node39" href="$_timed_mark_8h.html" title="TimedMark.h" alt="" coords="491,453,588,480"/>
+</map>

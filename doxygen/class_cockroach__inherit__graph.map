@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_enemy.html" title="Représente un ennemi (insecte)." alt="" coords="15,80,77,107"/>
+<area shape="rect" id="node4" href="$class_markable.html" title="Représente un objet marquable." alt="" coords="9,5,84,32"/>
+</map>

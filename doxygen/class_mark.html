@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>QTowerDefence: Référence de la classe Mark</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">QTowerDefence</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a>  </div>
+  <div class="headertitle">
+<h1>Référence de la classe Mark</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Mark" -->
+<p>Représente une marque.  
+<a href="#_details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_mark_8h_source.html">Mark.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de Mark:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mark__inherit__graph.png" border="0" usemap="#_mark_inherit__map" alt="Inheritance graph"/></div>
+<map name="_mark_inherit__map" id="_mark_inherit__map">
+<area shape="rect" id="node3" href="class_power_buff.html" title="Représente une marque qui augmente la puissance de la cible sur laquelle elle est placée..." alt="" coords="5,80,85,107"/><area shape="rect" id="node5" href="class_timed_mark.html" title="Représente une marque temporaire." alt="" coords="110,80,196,107"/><area shape="rect" id="node7" href="class_speed_buff.html" title="Représente une marque qui augmente temporairement la vitesse de la cible sur laquelle elle est placée..." alt="" coords="57,155,137,181"/><area shape="rect" id="node9" href="class_speed_debuff.html" title="Représente une marque qui baisse temporairement la vitesse de la cible sur laquelle elle est placée..." alt="" coords="162,155,256,181"/></map>
+<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+
+<p><a href="class_mark-members.html">Liste de tous les membres</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mark.html#a65c2d75788d944e1f96a96d29997b1e0">Mark</a> (float intensity, bool isStackable)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mark.html#a944f3e8ec10d075dc2a2b2073986c097">mark</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mark.html#a238d6059f7536ccd97c2d0e9962103ea">unmark</a> ()</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Représente une marque. </p>
+<p>Une marque se place sur un objet et l'affecte. Certaines marques sont cumulables, alors que d'autre sont temporaires et se réinitialise si l'on tente d'en ajouter une seconde. </p>
+
+<p>Définition à la ligne <a class="el" href="_mark_8h_source.html#l00013">13</a> du fichier <a class="el" href="_mark_8h_source.html">Mark.h</a>.</p>
+</div><hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a65c2d75788d944e1f96a96d29997b1e0"></a><!-- doxytag: member="Mark::Mark" ref="a65c2d75788d944e1f96a96d29997b1e0" args="(float intensity, bool isStackable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mark::Mark </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>intensity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isStackable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mark_8h_source.html#l00020">20</a> du fichier <a class="el" href="_mark_8h_source.html">Mark.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a944f3e8ec10d075dc2a2b2073986c097"></a><!-- doxytag: member="Mark::mark" ref="a944f3e8ec10d075dc2a2b2073986c097" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mark::mark </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mark_8cpp_source.html#l00005">5</a> du fichier <a class="el" href="_mark_8cpp_source.html">Mark.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a238d6059f7536ccd97c2d0e9962103ea"></a><!-- doxytag: member="Mark::unmark" ref="a238d6059f7536ccd97c2d0e9962103ea" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mark::unmark </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mark_8cpp_source.html#l00009">9</a> du fichier <a class="el" href="_mark_8cpp_source.html">Mark.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>C:/Users/Victor/Dropbox/Tower Defense/Code/<a class="el" href="_mark_8h_source.html">Mark.h</a></li>
+<li>C:/Users/Victor/Dropbox/Tower Defense/Code/<a class="el" href="_mark_8cpp_source.html">Mark.cpp</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Thu Jun 2 2011 22:01:54 pour QTowerDefence par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

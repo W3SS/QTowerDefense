@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_markable.html" title="Représente un objet marquable." alt="" coords="5,160,80,187"/>
+<area shape="rect" id="node4" href="$class_map.html" title="Représente la carte (plateau/niveau) de jeu. La carte est divisée en 16*16 divisions." alt="" coords="105,160,151,187"/>
+<area shape="rect" id="node6" href="$class_speed_debuff.html" title="Représente une marque qui baisse temporairement la vitesse de la cible sur laquelle elle est placée..." alt="" coords="175,160,269,187"/>
+<area shape="rect" id="node8" href="$class_timed_mark.html" title="Représente une marque temporaire." alt="" coords="179,83,265,109"/>
+<area shape="rect" id="node10" href="$class_mark.html" title="Représente une marque." alt="" coords="197,5,248,32"/>
+</map>

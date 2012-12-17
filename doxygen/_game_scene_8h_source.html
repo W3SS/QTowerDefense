@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>QTowerDefence:  Fichier source de C:/Users/Victor/Dropbox/Tower Defense/Code/GameScene.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">QTowerDefence</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>C:/Users/Victor/Dropbox/Tower Defense/Code/GameScene.h</h1>  </div>
+</div>
+<div class="contents">
+<a href="_game_scene_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿#ifndef GAME_SCENE_H
+<a name="l00002"></a>00002 <span class="preprocessor">#define GAME_SCENE_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QtGui&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="_game_8h.html">Game.h</a>&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="_enemy_factory_8h.html">EnemyFactory.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_projectile_8h.html">Projectile.h</a>&quot;</span>
+<a name="l00008"></a>00008 
+<a name="l00017"></a><a class="code" href="class_game_scene.html">00017</a> <span class="keyword">class </span><a class="code" href="class_game_scene.html" title="Représente le canevas 2D sur lequel le jeu est dessiné.">GameScene</a> : <span class="keyword">public</span> QGraphicsScene {
+<a name="l00018"></a>00018     <span class="keyword">private</span>:
+<a name="l00019"></a>00019         Q_OBJECT
+<a name="l00020"></a>00020         <a class="code" href="class_game.html" title="Représente une partie de jeu.">Game</a>* game;
+<a name="l00021"></a>00021         QList&lt;Defence*&gt; defences;
+<a name="l00022"></a>00022         QList&lt;Enemy*&gt; enemies;
+<a name="l00023"></a>00023         QList&lt;Projectile*&gt; projectiles;
+<a name="l00024"></a>00024         QTimer* spawnTimer;
+<a name="l00025"></a>00025         QTimer* nextWaveTimer;
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027     <span class="keyword">public</span>:
+<a name="l00032"></a><a class="code" href="class_game_scene.html#a95a7f2c16de4342f15e7e856fb70fb27">00032</a>         <a class="code" href="class_game_scene.html#a95a7f2c16de4342f15e7e856fb70fb27">GameScene</a> (<a class="code" href="class_game.html" title="Représente une partie de jeu.">Game</a>* game, QWidget* parent = 0):
+<a name="l00033"></a>00033             QGraphicsScene (parent), game (game), spawnTimer (new QTimer (this)), nextWaveTimer (new QTimer (this)) {
+<a name="l00034"></a>00034             QObject::connect (this-&gt;spawnTimer, SIGNAL (timeout ()), <span class="keyword">this</span>, SLOT (<a class="code" href="class_game_scene.html#ad0d2cab9b88756631e1a5dadb1a16094" title="Commence à générer l&amp;#39;ennemi suivant.">addEnemy</a> ()));
+<a name="l00035"></a>00035             QObject::connect (this-&gt;nextWaveTimer, SIGNAL (timeout ()), <span class="keyword">this</span>, SLOT (<a class="code" href="class_game_scene.html#a718b31e5f814a9891c0055908728b2d0" title="Commence à générer la vague d&amp;#39;ennemis suivante.">addWave</a> ()));
+<a name="l00036"></a>00036             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#aeb384b2414a485149f158a554a368ee0">getSize</a> (); i++) {
+<a name="l00037"></a>00037                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#aeb384b2414a485149f158a554a368ee0">getSize</a> (); j++) {
+<a name="l00038"></a>00038                     <span class="keywordflow">if</span> (game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#afd4ec3bc49ed77c6c05733370deb27ed">getTile</a> (i, j) == 0) {
+<a name="l00039"></a>00039                         QGraphicsPixmapItem* item = <span class="keyword">new</span> QGraphicsPixmapItem (QPixmap (<span class="stringliteral">&quot;herbe.jpg&quot;</span>).scaled (40, 40));
+<a name="l00040"></a>00040                         item-&gt;setPos ((j - 8) * 40, (i - 8) * 40);
+<a name="l00041"></a>00041                         this-&gt;addItem (item);
+<a name="l00042"></a>00042                         <span class="comment">//QGraphicsRectItem* item2 = new QGraphicsRectItem (0, 0, 40, 40);</span>
+<a name="l00043"></a>00043                         <span class="comment">//item2-&gt;setPen (QPen (&quot;green&quot;));</span>
+<a name="l00044"></a>00044                         <span class="comment">//item2-&gt;setPos ((j - 8) * 40, (i - 8) * 40);</span>
+<a name="l00045"></a>00045                         <span class="comment">//this-&gt;addItem (item2);</span>
+<a name="l00046"></a>00046                     }
+<a name="l00047"></a>00047                     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#afd4ec3bc49ed77c6c05733370deb27ed">getTile</a> (i, j) &lt;= 26 &amp;&amp; game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#afd4ec3bc49ed77c6c05733370deb27ed">getTile</a> (i, j) &gt;= 16) {
+<a name="l00048"></a>00048                         QGraphicsRectItem* item = <span class="keyword">new</span> QGraphicsRectItem (0, 0, 40, 40);
+<a name="l00049"></a>00049                         item-&gt;setBrush (QBrush (<span class="stringliteral">&quot;red&quot;</span>));
+<a name="l00050"></a>00050                         <span class="comment">//item-&gt;setPen (QPen (&quot;green&quot;));</span>
+<a name="l00051"></a>00051                         item-&gt;setPos ((j - 8) * 40, (i - 8) * 40);
+<a name="l00052"></a>00052                         this-&gt;addItem (item);
+<a name="l00053"></a>00053                         this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a>()-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a>()-&gt;<a class="code" href="class_map.html#a358734d528504dc7b62c463242726f40">setStartingTile</a>(i, j);
+<a name="l00054"></a>00054                     }
+<a name="l00055"></a>00055                     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#afd4ec3bc49ed77c6c05733370deb27ed">getTile</a> (i, j) &gt;= 1 &amp;&amp; game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#afd4ec3bc49ed77c6c05733370deb27ed">getTile</a> (i, j) &lt;= 15) {
+<a name="l00056"></a>00056                         QGraphicsRectItem* item = <span class="keyword">new</span> QGraphicsRectItem (0, 0, 40, 40);
+<a name="l00057"></a>00057                         item-&gt;setBrush (QBrush (<span class="stringliteral">&quot;lightblue&quot;</span>));
+<a name="l00058"></a>00058                         <span class="comment">//item-&gt;setPen (QPen (&quot;green&quot;));</span>
+<a name="l00059"></a>00059                         item-&gt;setPos ((j - 8) * 40, (i - 8) * 40);
+<a name="l00060"></a>00060                         this-&gt;addItem (item);
+<a name="l00061"></a>00061                     }
+<a name="l00062"></a>00062                     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#afd4ec3bc49ed77c6c05733370deb27ed">getTile</a> (i, j) == 32) {
+<a name="l00063"></a>00063                         QGraphicsPixmapItem* item = <span class="keyword">new</span> QGraphicsPixmapItem (QPixmap (<span class="stringliteral">&quot;but.png&quot;</span>).scaled (40, 40));
+<a name="l00064"></a>00064                         item-&gt;setPos ((j - 8) * 40, (i - 8) * 40);
+<a name="l00065"></a>00065                         this-&gt;addItem (item);
+<a name="l00066"></a>00066                     }
+<a name="l00067"></a>00067                     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (game-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()-&gt;<a class="code" href="class_map.html#afd4ec3bc49ed77c6c05733370deb27ed">getTile</a> (i, j) == 64) {
+<a name="l00068"></a>00068                         QGraphicsRectItem* item = <span class="keyword">new</span> QGraphicsRectItem (0, 0, 40, 40);
+<a name="l00069"></a>00069                         <span class="comment">//item-&gt;setPen (QPen (&quot;brown&quot;));</span>
+<a name="l00070"></a>00070                         item-&gt;setBrush (QBrush (<span class="stringliteral">&quot;brown&quot;</span>));
+<a name="l00071"></a>00071                         item-&gt;setPos ((j - 8) * 40, (i - 8) * 40);
+<a name="l00072"></a>00072                         this-&gt;addItem (item);
+<a name="l00073"></a>00073                     }
+<a name="l00074"></a>00074                 }
+<a name="l00075"></a>00075             }
+<a name="l00076"></a>00076         }
+<a name="l00077"></a>00077 
+<a name="l00082"></a><a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">00082</a>         <a class="code" href="class_game.html" title="Représente une partie de jeu.">Game</a>* <a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;game; }
+<a name="l00083"></a>00083 
+<a name="l00088"></a><a class="code" href="class_game_scene.html#ae321479ed0b46377d819dc670c2faedb">00088</a>         QList&lt;Defence*&gt; <a class="code" href="class_game_scene.html#ae321479ed0b46377d819dc670c2faedb">getDefences</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;defences; }
+<a name="l00089"></a>00089 
+<a name="l00094"></a><a class="code" href="class_game_scene.html#ac4b4235c3fd04e5cf8673e2f8fafe30c">00094</a>         QList&lt;Enemy*&gt; <a class="code" href="class_game_scene.html#ac4b4235c3fd04e5cf8673e2f8fafe30c">getEnemies</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;enemies; }
+<a name="l00095"></a>00095 
+<a name="l00100"></a><a class="code" href="class_game_scene.html#a7de7a4f1471e9ecba5a82a910004c6f4">00100</a>         QList&lt;Projectile*&gt; <a class="code" href="class_game_scene.html#a7de7a4f1471e9ecba5a82a910004c6f4">getProjectiles</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;projectiles; }
+<a name="l00101"></a>00101 
+<a name="l00107"></a><a class="code" href="class_game_scene.html#aa5ef41bd01c8f0f4a34875ff97fd2b08">00107</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#aa5ef41bd01c8f0f4a34875ff97fd2b08" title="Ajoute une défense sur l&amp;#39;aire de jeu.">addDefence</a> (<a class="code" href="class_defence.html" title="Représente une défense.">Defence</a>* d) {
+<a name="l00108"></a>00108             this-&gt;defences &lt;&lt; d;
+<a name="l00109"></a>00109             this-&gt;addItem (d);
+<a name="l00110"></a>00110         }
+<a name="l00111"></a>00111 
+<a name="l00117"></a><a class="code" href="class_game_scene.html#a8effa5d66966e5373daf195667de1229">00117</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a8effa5d66966e5373daf195667de1229" title="Ajoute un ennemi sur l&amp;#39;aire de jeu.">addEnemy</a> (<a class="code" href="class_enemy.html" title="Représente un ennemi (insecte).">Enemy</a>* e) {
+<a name="l00118"></a>00118             this-&gt;enemies &lt;&lt; e;
+<a name="l00119"></a>00119             this-&gt;addItem (e);
+<a name="l00120"></a>00120         }
+<a name="l00121"></a>00121 
+<a name="l00127"></a><a class="code" href="class_game_scene.html#a7e160fccfe5efee431c9700b9d0e91df">00127</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a7e160fccfe5efee431c9700b9d0e91df" title="Ajoute un projectile sur l&amp;#39;aire de jeu.">addProjectile</a> (<a class="code" href="class_projectile.html" title="Représente un projectile générique.">Projectile</a>* p) {
+<a name="l00128"></a>00128             this-&gt;projectiles &lt;&lt; p;
+<a name="l00129"></a>00129             this-&gt;addItem (p);
+<a name="l00130"></a>00130         }
+<a name="l00131"></a>00131 
+<a name="l00137"></a><a class="code" href="class_game_scene.html#a21ac5fc2063cc5acefe4b6b59d16ac8a">00137</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a21ac5fc2063cc5acefe4b6b59d16ac8a" title="Retire une défense de l&amp;#39;aire de jeu.">removeDefence</a> (<a class="code" href="class_defence.html" title="Représente une défense.">Defence</a>* d) {
+<a name="l00138"></a>00138             this-&gt;defences.removeOne (d);
+<a name="l00139"></a>00139             this-&gt;removeItem (d);
+<a name="l00140"></a>00140             this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a>()-&gt;<a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a>()-&gt;<a class="code" href="class_map.html#a722ef435b4b74f70fe1019df67848ec4">setTile</a>(<a class="code" href="class_map.html#af37079a9b69e96bfc3e8b5beda6b516c">Map::toI</a>(d-&gt;pos().y()), <a class="code" href="class_map.html#a497020c677fadba48fa8021f28fcce80">Map::toJ</a>(d-&gt;pos().x()), 0);
+<a name="l00141"></a>00141         }
+<a name="l00142"></a>00142 
+<a name="l00148"></a><a class="code" href="class_game_scene.html#ad0c77984413da15b877f4125a2cd65ac">00148</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#ad0c77984413da15b877f4125a2cd65ac" title="Retire un ennemi de l&amp;#39;aire de jeu.">removeEnemy</a> (<a class="code" href="class_enemy.html" title="Représente un ennemi (insecte).">Enemy</a>* e) {
+<a name="l00149"></a>00149             this-&gt;enemies.removeOne (e);
+<a name="l00150"></a>00150             this-&gt;removeItem (e);
+<a name="l00151"></a>00151         }
+<a name="l00152"></a>00152 
+<a name="l00158"></a><a class="code" href="class_game_scene.html#a47fc5085bc13506fc50f568463576c76">00158</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a47fc5085bc13506fc50f568463576c76" title="Retire un projectile de l&amp;#39;aire de jeu.">removeProjectile</a> (<a class="code" href="class_projectile.html" title="Représente un projectile générique.">Projectile</a>* p) {
+<a name="l00159"></a>00159             this-&gt;projectiles.removeOne (p);
+<a name="l00160"></a>00160             this-&gt;removeItem (p);
+<a name="l00161"></a>00161         }
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163     <span class="keyword">public</span> slots:
+<a name="l00169"></a><a class="code" href="class_game_scene.html#a2ea7bebe7770ad347f2e37642754ff37">00169</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a2ea7bebe7770ad347f2e37642754ff37" title="Slot appelé lorsqu&amp;#39;un ennemi atteint le but.">enemyTrespassed</a> (<a class="code" href="class_enemy.html" title="Représente un ennemi (insecte).">Enemy</a>* e) {
+<a name="l00170"></a>00170             this-&gt;game-&gt;<a class="code" href="class_game.html#a512d859832bcf3d6f6a87b1fa47f8c2e">setLives</a> (this-&gt;game-&gt;<a class="code" href="class_game.html#a4f0c1f88e8e3f4652f8242a0fa8f174d">getLives</a>() - 1);
+<a name="l00171"></a>00171             this-&gt;<a class="code" href="class_game_scene.html#ad0c77984413da15b877f4125a2cd65ac" title="Retire un ennemi de l&amp;#39;aire de jeu.">removeEnemy</a> (e);
+<a name="l00172"></a>00172         }
+<a name="l00173"></a>00173 
+<a name="l00178"></a><a class="code" href="class_game_scene.html#a718b31e5f814a9891c0055908728b2d0">00178</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a718b31e5f814a9891c0055908728b2d0" title="Commence à générer la vague d&amp;#39;ennemis suivante.">addWave</a> () {
+<a name="l00179"></a>00179             this-&gt;game-&gt;<a class="code" href="class_game.html#a70c42959ecd57248aa1b69afe00a3e37">setCurrentSwarmIndex</a> (0);
+<a name="l00180"></a>00180             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentWaveIndex() &lt; this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a>()-&gt;getWavesNumber())
+<a name="l00181"></a>00181                 this-&gt;<a class="code" href="class_game_scene.html#a5bb39ed3b3a526660c1dfb0ab44fdee7" title="Commence à générer l&amp;#39;essaim d&amp;#39;ennemis suivant.">addSwarm</a> ();
+<a name="l00182"></a>00182         }
+<a name="l00183"></a>00183 
+<a name="l00188"></a><a class="code" href="class_game_scene.html#a5bb39ed3b3a526660c1dfb0ab44fdee7">00188</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a5bb39ed3b3a526660c1dfb0ab44fdee7" title="Commence à générer l&amp;#39;essaim d&amp;#39;ennemis suivant.">addSwarm</a> () {
+<a name="l00189"></a>00189             <a class="code" href="class_wave.html" title="Représente une Vague d&amp;#39;ennemis.">Wave</a>* wave = this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;<a class="code" href="class_game.html#aa3236ffde913b2354664351573b86792">getWave</a> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentWaveIndex ());
+<a name="l00190"></a>00190             <span class="keywordflow">if</span>  (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentSwarmIndex () &lt; wave-&gt;<a class="code" href="class_wave.html#a42ab1d450a7610311d6da5123538de0b">getSwarmsNumber</a> ()) {
+<a name="l00191"></a>00191                 <a class="code" href="class_swarm.html" title="Représente un essaim.">Swarm</a>* swarm = wave-&gt;<a class="code" href="class_wave.html#a87ba1e5537c584d1247456b07bc50ece">getSwarm</a> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentSwarmIndex ());
+<a name="l00192"></a>00192                 this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;<a class="code" href="class_game.html#a487b11b8d5e3c85c80f5f719ba96fdab">setCurrentEnemyIndex</a> (0);
+<a name="l00193"></a>00193                 this-&gt;spawnTimer-&gt;start (1000 / 40 * swarm-&gt;<a class="code" href="class_swarm.html#a97bd6f197dc5779f8597963e01ac93a5">getSpawnFrequency</a> ());
+<a name="l00194"></a>00194             }
+<a name="l00195"></a>00195                 <span class="comment">//this-&gt;nextWaveTimer-&gt;start (1000 * 15);</span>
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197             <span class="keywordflow">else</span>
+<a name="l00198"></a>00198             {
+<a name="l00199"></a>00199                 <span class="comment">// fin de partie</span>
+<a name="l00200"></a>00200                 <span class="comment">//this-&gt;nextWaveTimer-&gt;stop();</span>
+<a name="l00201"></a>00201                 this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;<a class="code" href="class_game.html#a9b46b5c8530644c8ed620f6e6c984213">setCurrentWaveIndex</a> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentWaveIndex () + 1);
+<a name="l00202"></a>00202                 this-&gt;spawnTimer-&gt;stop();
+<a name="l00203"></a>00203                 emit <a class="code" href="class_game_scene.html#a56633239bebff1fdbbf33c01bf194617" title="Signal émis lorsque le joueur a gagné la partie.">gameWon</a> ();
+<a name="l00204"></a>00204             }
+<a name="l00205"></a>00205         }
+<a name="l00206"></a>00206 
+<a name="l00211"></a><a class="code" href="class_game_scene.html#ad0d2cab9b88756631e1a5dadb1a16094">00211</a>         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#ad0d2cab9b88756631e1a5dadb1a16094" title="Commence à générer l&amp;#39;ennemi suivant.">addEnemy</a> () {
+<a name="l00212"></a>00212             <a class="code" href="class_wave.html" title="Représente une Vague d&amp;#39;ennemis.">Wave</a>* wave = this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;<a class="code" href="class_game.html#aa3236ffde913b2354664351573b86792">getWave</a> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentWaveIndex ());
+<a name="l00213"></a>00213             <a class="code" href="class_swarm.html" title="Représente un essaim.">Swarm</a>* swarm = wave-&gt;<a class="code" href="class_wave.html#a87ba1e5537c584d1247456b07bc50ece">getSwarm</a> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentSwarmIndex ());
+<a name="l00214"></a>00214 
+<a name="l00215"></a>00215             <span class="keywordflow">if</span>  (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentEnemyIndex () &lt; swarm-&gt;<a class="code" href="class_swarm.html#abbf270add04e95eceda5d321c7800494">getNumber</a> ()) {
+<a name="l00216"></a>00216                 <a class="code" href="class_enemy.html" title="Représente un ennemi (insecte).">Enemy</a>* enemy = <a class="code" href="class_enemy_factory.html#a7b23ae0f0ecab0cd79d255cdd56fa727" title="Produit un ennemi du type spécifié en paramètre.">EnemyFactory::getEnemy</a> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a>()-&gt;getMap(), swarm-&gt;<a class="code" href="class_swarm.html#a730ea0a47263380e46de21862d4ceb30">getEnemiesType</a> (), swarm-&gt;<a class="code" href="class_swarm.html#abff972979264f35b7a0edc07eb7e6799">getEnemiesSize</a> ());
+<a name="l00217"></a>00217                 QObject::connect (enemy, SIGNAL (<a class="code" href="class_game_scene.html#a2ea7bebe7770ad347f2e37642754ff37" title="Slot appelé lorsqu&amp;#39;un ennemi atteint le but.">enemyTrespassed</a>(<a class="code" href="class_enemy.html" title="Représente un ennemi (insecte).">Enemy</a>*)), <span class="keyword">this</span>, SLOT (<a class="code" href="class_game_scene.html#a2ea7bebe7770ad347f2e37642754ff37" title="Slot appelé lorsqu&amp;#39;un ennemi atteint le but.">enemyTrespassed</a>(<a class="code" href="class_enemy.html" title="Représente un ennemi (insecte).">Enemy</a>*)));
+<a name="l00218"></a>00218                 this-&gt;<a class="code" href="class_game_scene.html#ad0d2cab9b88756631e1a5dadb1a16094" title="Commence à générer l&amp;#39;ennemi suivant.">addEnemy</a> (enemy);
+<a name="l00219"></a>00219                 enemy-&gt;setPos (<a class="code" href="class_map.html#a8c1ce465a37adb8cb374e9e933eeb3e5">Map::toX</a>(this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a>()-&gt;getMap()-&gt;getStartingTileX()), <a class="code" href="class_map.html#a7758a147a1815ca837ab5e0476d68bbf">Map::toY</a>(this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a>()-&gt;getMap()-&gt;getStartingTileY()));
+<a name="l00220"></a>00220                 this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;<a class="code" href="class_game.html#a487b11b8d5e3c85c80f5f719ba96fdab">setCurrentEnemyIndex</a> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentEnemyIndex () + 1);
+<a name="l00221"></a>00221             }
+<a name="l00222"></a>00222             <span class="keywordflow">else</span> {
+<a name="l00223"></a>00223                 this-&gt;spawnTimer-&gt;stop ();
+<a name="l00224"></a>00224                 this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;<a class="code" href="class_game.html#a70c42959ecd57248aa1b69afe00a3e37">setCurrentSwarmIndex</a> (this-&gt;<a class="code" href="class_game_scene.html#aa7119c0a33f15019c8eb8da5578b75ca">getGame</a> ()-&gt;getCurrentSwarmIndex () + 1);
+<a name="l00225"></a>00225                 this-&gt;<a class="code" href="class_game_scene.html#a5bb39ed3b3a526660c1dfb0ab44fdee7" title="Commence à générer l&amp;#39;essaim d&amp;#39;ennemis suivant.">addSwarm</a>();
+<a name="l00226"></a>00226             }
+<a name="l00227"></a>00227         }
+<a name="l00228"></a>00228 
+<a name="l00229"></a>00229     signals:
+<a name="l00234"></a>00234         <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a56633239bebff1fdbbf33c01bf194617" title="Signal émis lorsque le joueur a gagné la partie.">gameWon</a> ();
+<a name="l00235"></a>00235 };
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Thu Jun 2 2011 22:01:52 pour QTowerDefence par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

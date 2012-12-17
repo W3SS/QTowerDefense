@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$class_markable.html" title="Représente un objet marquable." alt="" coords="5,81,80,108"/>
+<area shape="rect" id="node3" href="$class_enemy.html" title="Représente un ennemi (insecte)." alt="" coords="129,81,191,108"/>
+<area shape="rect" id="node5" href="$class_ant.html" title="Représente une fourmi." alt="" coords="261,5,304,32"/>
+<area shape="rect" id="node7" href="$class_cockroach.html" title="Représente un cafard." alt="" coords="241,56,325,83"/>
+<area shape="rect" id="node9" href="$class_mosquito.html" title="Représente un moustique." alt="" coords="245,107,320,133"/>
+<area shape="rect" id="node11" href="$class_wasp.html" title="Représente une guêpe." alt="" coords="255,157,311,184"/>
+</map>

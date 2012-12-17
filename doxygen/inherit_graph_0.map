@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$class_defence.html" title="Représente une défense." alt="" coords="5,107,75,133"/>
+<area shape="rect" id="node3" href="$class_hostile_defence.html" title="Représente une défense aggressive." alt="" coords="123,81,232,108"/>
+<area shape="rect" id="node13" href="$class_musician.html" title="Représente un musicien." alt="" coords="140,132,215,159"/>
+<area shape="rect" id="node5" href="$class_bowler.html" title="Représente un joueur de pétanque." alt="" coords="291,5,352,32"/>
+<area shape="rect" id="node7" href="$class_paintball.html" title="Représente un joueur de paintball." alt="" coords="285,56,357,83"/>
+<area shape="rect" id="node9" href="$class_slingshot.html" title="Représente un lance&#45;pierre." alt="" coords="283,107,359,133"/>
+<area shape="rect" id="node11" href="$class_water_gun.html" title="Représente un pistolet à eau." alt="" coords="281,157,362,184"/>
+</map>

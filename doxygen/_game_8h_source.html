@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>QTowerDefence:  Fichier source de C:/Users/Victor/Dropbox/Tower Defense/Code/Game.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">QTowerDefence</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>C:/Users/Victor/Dropbox/Tower Defense/Code/Game.h</h1>  </div>
+</div>
+<div class="contents">
+<a href="_game_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿#ifndef GAME_H
+<a name="l00002"></a>00002 <span class="preprocessor">#define GAME_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QtGui&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">Map.h</a>&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="_wave_8h.html">Wave.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_mode_8h.html">Mode.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="_selection_mode_8h.html">SelectionMode.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="_construction_mode_8h.html">ConstructionMode.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="_defence_8h.html">Defence.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_defence_factory_8h.html">DefenceFactory.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00019"></a><a class="code" href="class_game.html">00019</a> <span class="keyword">class </span><a class="code" href="class_game.html" title="Représente une partie de jeu.">Game</a> : <span class="keyword">public</span> QObject {
+<a name="l00020"></a>00020     <span class="keyword">private</span>:
+<a name="l00021"></a>00021         Q_OBJECT
+<a name="l00022"></a>00022         <span class="keywordtype">int</span> lives;
+<a name="l00023"></a>00023         <span class="keywordtype">int</span> money;
+<a name="l00024"></a>00024         <span class="keywordtype">int</span> currentSwarmIndex;
+<a name="l00025"></a>00025         <span class="keywordtype">int</span> currentEnemyIndex;
+<a name="l00026"></a>00026         QString mapFilePath;
+<a name="l00027"></a>00027         QString wavesFilePath;
+<a name="l00028"></a>00028         <a class="code" href="class_map.html" title="Représente la carte (plateau/niveau) de jeu. La carte est divisée en 16*16 divisions.">Map</a>* map;
+<a name="l00029"></a>00029         <span class="keywordtype">int</span> currentWaveIndex;
+<a name="l00030"></a>00030         QList&lt;Wave*&gt; waves;
+<a name="l00031"></a>00031         <a class="code" href="class_mode.html" title="Représente un mode d&amp;#39;intéraction pour le joueur.">Mode</a>* mode;
+<a name="l00032"></a>00032  
+<a name="l00033"></a>00033     <span class="keyword">public</span>:
+<a name="l00041"></a><a class="code" href="class_game.html#a3240ee73ceb66ea6f6a490f2a87dceaf">00041</a>         <a class="code" href="class_game.html#a3240ee73ceb66ea6f6a490f2a87dceaf">Game</a> (<span class="keywordtype">int</span> lives = 10, <span class="keywordtype">int</span> money = 1000, QString mapFilePath = <span class="stringliteral">&quot;map.txt&quot;</span>, QString wavesFilePath = <span class="stringliteral">&quot;waves.txt&quot;</span>):
+<a name="l00042"></a>00042             lives (lives), money (money), mapFilePath (mapFilePath), wavesFilePath (wavesFilePath), map (new <a class="code" href="class_map.html" title="Représente la carte (plateau/niveau) de jeu. La carte est divisée en 16*16 divisions.">Map</a> ()), currentWaveIndex (0), mode (new <a class="code" href="class_selection_mode.html" title="Représente le mode de sélection.">SelectionMode</a> ()) {
+<a name="l00043"></a>00043             this-&gt;loadMap ();
+<a name="l00044"></a>00044             this-&gt;loadWaves ();
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046 
+<a name="l00051"></a><a class="code" href="class_game.html#a83093f330459b3bfb764dbd148e26d5a">00051</a>         <span class="keywordtype">int</span> <a class="code" href="class_game.html#a83093f330459b3bfb764dbd148e26d5a">getCurrentWaveIndex</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;currentWaveIndex; }
+<a name="l00052"></a>00052 
+<a name="l00057"></a><a class="code" href="class_game.html#a2fcc763b970382a4730b13f91f1c77fa">00057</a>         <span class="keywordtype">int</span> <a class="code" href="class_game.html#a2fcc763b970382a4730b13f91f1c77fa">getCurrentSwarmIndex</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;currentSwarmIndex; }
+<a name="l00058"></a>00058 
+<a name="l00063"></a><a class="code" href="class_game.html#aeb2929772ac5b87ff60efaf6d9b2239b">00063</a>         <span class="keywordtype">int</span> <a class="code" href="class_game.html#aeb2929772ac5b87ff60efaf6d9b2239b">getCurrentEnemyIndex</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;currentEnemyIndex; }
+<a name="l00064"></a>00064 
+<a name="l00069"></a><a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">00069</a>         <a class="code" href="class_map.html" title="Représente la carte (plateau/niveau) de jeu. La carte est divisée en 16*16 divisions.">Map</a>* <a class="code" href="class_game.html#aa3f7ee87cbbe106e9c2636629b76f12d">getMap</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;map; }
+<a name="l00070"></a>00070 
+<a name="l00076"></a><a class="code" href="class_game.html#aa3236ffde913b2354664351573b86792">00076</a>         <a class="code" href="class_wave.html" title="Représente une Vague d&amp;#39;ennemis.">Wave</a>* <a class="code" href="class_game.html#aa3236ffde913b2354664351573b86792">getWave</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;waves[i]; }
+<a name="l00077"></a>00077 
+<a name="l00082"></a><a class="code" href="class_game.html#ac9d6bf95c7a16aa2d5434da21b670194">00082</a>         <a class="code" href="class_mode.html" title="Représente un mode d&amp;#39;intéraction pour le joueur.">Mode</a>* <a class="code" href="class_game.html#ac9d6bf95c7a16aa2d5434da21b670194">getMode</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;mode; }
+<a name="l00083"></a>00083 
+<a name="l00088"></a><a class="code" href="class_game.html#a4f0c1f88e8e3f4652f8242a0fa8f174d">00088</a>         <span class="keywordtype">int</span> <a class="code" href="class_game.html#a4f0c1f88e8e3f4652f8242a0fa8f174d">getLives</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;lives; }
+<a name="l00089"></a>00089 
+<a name="l00094"></a><a class="code" href="class_game.html#a6acce64f03c5fd3d37acc8f7be3a1ba5">00094</a>         <span class="keywordtype">int</span> <a class="code" href="class_game.html#a6acce64f03c5fd3d37acc8f7be3a1ba5">getMoney</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;money; }
+<a name="l00095"></a>00095 
+<a name="l00100"></a><a class="code" href="class_game.html#a730c828c796b561afa07f55109a94e17">00100</a>         <span class="keywordtype">int</span> <a class="code" href="class_game.html#a730c828c796b561afa07f55109a94e17">getWavesNumber</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;waves.size (); }
+<a name="l00101"></a>00101 
+<a name="l00106"></a><a class="code" href="class_game.html#a512d859832bcf3d6f6a87b1fa47f8c2e">00106</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#a512d859832bcf3d6f6a87b1fa47f8c2e">setLives</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i) { this-&gt;lives = i; }
+<a name="l00107"></a>00107 
+<a name="l00112"></a><a class="code" href="class_game.html#acce50442ccb344575740ed47d364d48b">00112</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#acce50442ccb344575740ed47d364d48b">setMoney</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i) { this-&gt;money = i; }
+<a name="l00113"></a>00113 
+<a name="l00118"></a><a class="code" href="class_game.html#a9b46b5c8530644c8ed620f6e6c984213">00118</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#a9b46b5c8530644c8ed620f6e6c984213">setCurrentWaveIndex</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i) { this-&gt;currentWaveIndex = i; }
+<a name="l00119"></a>00119 
+<a name="l00124"></a><a class="code" href="class_game.html#a70c42959ecd57248aa1b69afe00a3e37">00124</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#a70c42959ecd57248aa1b69afe00a3e37">setCurrentSwarmIndex</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i) { this-&gt;currentSwarmIndex = i; }
+<a name="l00125"></a>00125 
+<a name="l00130"></a><a class="code" href="class_game.html#a487b11b8d5e3c85c80f5f719ba96fdab">00130</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#a487b11b8d5e3c85c80f5f719ba96fdab">setCurrentEnemyIndex</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i) { this-&gt;currentEnemyIndex = i; }
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132     <span class="keyword">private</span>:
+<a name="l00137"></a>00137         <span class="keywordtype">void</span> loadMap ();
+<a name="l00138"></a>00138 
+<a name="l00143"></a>00143         <span class="keywordtype">void</span> loadWaves();
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145     <span class="keyword">public</span> slots:
+<a name="l00150"></a><a class="code" href="class_game.html#acc7d51c466469b90e612df7db4151bc6">00150</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#acc7d51c466469b90e612df7db4151bc6" title="Passe en mode de sélection vide (prêt à sélectionner une tour)">switchToSelectionMode</a> () {
+<a name="l00151"></a>00151             <span class="keyword">delete</span> this-&gt;mode;
+<a name="l00152"></a>00152             this-&gt;mode = <span class="keyword">new</span> <a class="code" href="class_selection_mode.html" title="Représente le mode de sélection.">SelectionMode</a> ();
+<a name="l00153"></a>00153         }
+<a name="l00154"></a>00154 
+<a name="l00160"></a><a class="code" href="class_game.html#a5c6d0c12281e90c52f815b048ff7a380">00160</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#a5c6d0c12281e90c52f815b048ff7a380" title="Passe en mode de sélection de la défense spécifiée en paramètre.">switchToSelectionMode</a> (<a class="code" href="class_defence.html" title="Représente une défense.">Defence</a>* selectedTower) {
+<a name="l00161"></a>00161             <span class="keyword">delete</span> this-&gt;mode;
+<a name="l00162"></a>00162             this-&gt;mode = <span class="keyword">new</span> <a class="code" href="class_selection_mode.html" title="Représente le mode de sélection.">SelectionMode</a> (selectedTower);
+<a name="l00163"></a>00163         }
+<a name="l00164"></a>00164 
+<a name="l00169"></a><a class="code" href="class_game.html#ad8a7c43bf7f9c7211cc81aa85433ad1a">00169</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#ad8a7c43bf7f9c7211cc81aa85433ad1a" title="Passe en mode de construction de lance-pierres.">switchToConstructionModeForSlingshot</a> () {
+<a name="l00170"></a>00170             <span class="keyword">delete</span> this-&gt;mode;
+<a name="l00171"></a>00171             this-&gt;mode = <span class="keyword">new</span> <a class="code" href="class_construction_mode.html" title="Représente le mode de construction.">ConstructionMode</a> (<span class="stringliteral">&quot;Lance-pierres&quot;</span>);
+<a name="l00172"></a>00172         }
+<a name="l00173"></a>00173 
+<a name="l00178"></a><a class="code" href="class_game.html#a015ab8b0b2e8b86bd9a8b931a80000e3">00178</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#a015ab8b0b2e8b86bd9a8b931a80000e3" title="Passe en mode de construction de pistolet à eau.">switchToConstructionModeForWaterGun</a> () {
+<a name="l00179"></a>00179             <span class="keyword">delete</span> this-&gt;mode;
+<a name="l00180"></a>00180             this-&gt;mode = <span class="keyword">new</span> <a class="code" href="class_construction_mode.html" title="Représente le mode de construction.">ConstructionMode</a> (<span class="stringliteral">&quot;Pistolet à eau&quot;</span>);
+<a name="l00181"></a>00181         }
+<a name="l00182"></a>00182 
+<a name="l00187"></a><a class="code" href="class_game.html#abe4394320fa504d9bf785293dec2dd00">00187</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#abe4394320fa504d9bf785293dec2dd00" title="Passe en mode de construction de joueur de paintball.">switchToConstructionModeForPaintball</a> () {
+<a name="l00188"></a>00188             <span class="keyword">delete</span> this-&gt;mode;
+<a name="l00189"></a>00189             this-&gt;mode = <span class="keyword">new</span> <a class="code" href="class_construction_mode.html" title="Représente le mode de construction.">ConstructionMode</a> (<span class="stringliteral">&quot;Paintball&quot;</span>);
+<a name="l00190"></a>00190         }
+<a name="l00191"></a>00191 
+<a name="l00196"></a><a class="code" href="class_game.html#ad11dc340be8435ad7e454ee36d8b63f8">00196</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#ad11dc340be8435ad7e454ee36d8b63f8" title="Passe en mode de construction de joueur de pétanque.">switchToConstructionModeForBowler</a> () {
+<a name="l00197"></a>00197             <span class="keyword">delete</span> this-&gt;mode;
+<a name="l00198"></a>00198             this-&gt;mode = <span class="keyword">new</span> <a class="code" href="class_construction_mode.html" title="Représente le mode de construction.">ConstructionMode</a> (<span class="stringliteral">&quot;Joueur de pétanque&quot;</span>);
+<a name="l00199"></a>00199         }
+<a name="l00200"></a>00200 
+<a name="l00205"></a><a class="code" href="class_game.html#afc0fa7b72864a0f2c69e71856b3b87b3">00205</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#afc0fa7b72864a0f2c69e71856b3b87b3" title="Passe en mode de construction de musicien.">switchToConstructionModeForMusician</a> () {
+<a name="l00206"></a>00206             <span class="keyword">delete</span> this-&gt;mode;
+<a name="l00207"></a>00207             this-&gt;mode = <span class="keyword">new</span> <a class="code" href="class_construction_mode.html" title="Représente le mode de construction.">ConstructionMode</a> (<span class="stringliteral">&quot;Musicien&quot;</span>);
+<a name="l00208"></a>00208         }
+<a name="l00209"></a>00209 
+<a name="l00214"></a><a class="code" href="class_game.html#a7334cd26d30035ed5434aa11e058c623">00214</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#a7334cd26d30035ed5434aa11e058c623" title="Retire une vie à la partie.">decreaseLives</a> () { this-&gt;lives--; }
+<a name="l00215"></a>00215 
+<a name="l00221"></a><a class="code" href="class_game.html#a4dca34ed65f22305199a4f1e8c45af93">00221</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#a4dca34ed65f22305199a4f1e8c45af93" title="Débite de l&amp;#39;argent à la partie.">decreaseMoney</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i) { this-&gt;money -= i; }
+<a name="l00222"></a>00222 
+<a name="l00228"></a><a class="code" href="class_game.html#aebff1760e29e8247d0c88ffb2ebd8763">00228</a>         <span class="keywordtype">void</span> <a class="code" href="class_game.html#aebff1760e29e8247d0c88ffb2ebd8763" title="Crédite de l&amp;#39;argent à la partie.">increaseMoney</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i) { this-&gt;money += i; }
+<a name="l00229"></a>00229 };
+<a name="l00230"></a>00230 
+<a name="l00231"></a>00231 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Thu Jun 2 2011 22:01:52 pour QTowerDefence par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

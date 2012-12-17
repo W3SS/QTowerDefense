@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$class_speed_buff.html" title="Représente une marque qui augmente temporairement la vitesse de la cible sur laquelle elle est placée..." alt="" coords="5,155,85,181"/>
+<area shape="rect" id="node7" href="$class_speed_debuff.html" title="Représente une marque qui baisse temporairement la vitesse de la cible sur laquelle elle est placée..." alt="" coords="110,155,204,181"/>
+<area shape="rect" id="node2" href="$class_mark.html" title="Représente une marque." alt="" coords="76,5,127,32"/>
+</map>

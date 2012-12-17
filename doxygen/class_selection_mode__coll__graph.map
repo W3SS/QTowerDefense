@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_mode.html" title="Représente un mode d&#39;intéraction pour le joueur." alt="" coords="5,5,59,32"/>
+<area shape="rect" id="node4" href="$class_defence.html" title="Représente une défense." alt="" coords="84,5,153,32"/>
+</map>
